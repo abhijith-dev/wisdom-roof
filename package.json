@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "eslint": "^8.24.0",
+    "npmrc": "^1.1.1",
     "prettier": "^2.7.1",
     "prettierrc": "^0.0.0-5"
   }
