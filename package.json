@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon index.js",
-    "stage-start":"pm start ecosystem.config.js",
-    "stage-stop":"pm stop ecosystem.config.js",
+    "stage-start": "pm start ecosystem.config.js",
+    "stage-stop": "pm stop ecosystem.config.js",
     "start": "node index.js"
   },
   "dependencies": {
@@ -18,5 +18,10 @@
     "mongoose": "^6.6.1",
     "redis": "^4.3.1",
     "socket.io": "^4.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "prettier": "^2.7.1",
+    "prettierrc": "^0.0.0-5"
   }
 }
