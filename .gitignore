@@ -4,3 +4,4 @@ stage.env
 prod.env
 lib
 certificate
+.vscode

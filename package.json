@@ -6,7 +6,7 @@
   "author": "abhijith.shetty",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon index.js development",
     "stage-start": "pm start ecosystem.config.js",
     "stage-stop": "pm stop ecosystem.config.js",
     "start": "node index.js"
@@ -17,7 +17,8 @@
     "helmet": "^6.0.0",
     "mongoose": "^6.6.1",
     "redis": "^4.3.1",
-    "socket.io": "^4.5.2"
+    "socket.io": "^4.5.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "eslint": "^8.24.0",

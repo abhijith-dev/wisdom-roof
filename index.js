@@ -33,7 +33,11 @@ app.use(express.json())
 
 
 //server configuration
-const vars = require('./configurations/variables')  // imports 
+const vars = require('./configurations/variables')  // imports variables
+const database = require('./configurations/database.config') //imports database config 
+const initialRequest = require('./middlewares/initialRequest')
+const rwisdomRoof = require('./middlewares/rwr')
+
 const envirnoments = {
     dev: {
         platform: 'development',
@@ -75,16 +79,24 @@ else {
     server = http.createServer(app)
 }
 
-//routes
+//custom middlewares
+app.use('/api',rwisdomRoof) //initial request
+app.use("/api/v1",initialRequest) // checker for server maintenance down & rrid attachment
 
+
+//routes
+app.get('/test',(req,res)=>{res.status(200).send({})})
 //initialization server
 async function initServer(error) {
     if (!error) {
         console.log("server started..")
+        let r = await database.initialize()
+        console.log(r)
     }
     else {
         console.log('Opps !! something went wrong . error details :', error)
-        process.exit(1)
+        let d  = await database.terminate()
+        await (d.console ? (function(){console.log(d.text); process.exit(1); })() : await process.exit(1))
     }
 }
 //listen to server 

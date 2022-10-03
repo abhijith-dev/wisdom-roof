@@ -7,6 +7,7 @@ const dotenv = require('dotenv')
 
 module.exports = (function () {
     let env = process.argv[2]
+    
     if (env === options.DEV)
         dotenv.config({
             path: '.env'
