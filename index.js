@@ -96,7 +96,7 @@ async function initServer(error) {
     else {
         console.log('Opps !! something went wrong . error details :', error)
         let d  = await database.terminate()
-        await (d.console ? (function(){console.log(d.text); process.exit(1); })() : await process.exit(1))
+        d.console ? (function(){console.log(d.text); process.exit(1); })() : await process.exit(1)
     }
 }
 //listen to server 
